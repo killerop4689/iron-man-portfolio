@@ -1,0 +1,111 @@
+/* css/animations.css */
+
+/* --- CORE INITIAL BOOT ENGINE TIMELINES --- */
+.run-hand {
+    animation: handTimeline 1.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.run-node {
+    animation: nodeTimeline 0.7s 0.5s ease-in forwards;
+}
+
+.run-flash {
+    animation: flashTimeline 0.6s 1.2s ease-out forwards;
+}
+
+@keyframes handTimeline {
+    0% { transform: translateY(100%); opacity: 0; }
+    25% { transform: translateY(0); opacity: 1; }  
+    80% { transform: translateY(0); opacity: 1; }  
+    100% { transform: translateY(120%); opacity: 0; } 
+}
+
+@keyframes nodeTimeline {
+    0% { width: 6px; height: 6px; }
+    100% { width: 85px; height: 85px; } 
+}
+
+@keyframes flashTimeline {
+    0% { opacity: 0; }
+    20% { opacity: 0.7; }
+    100% { opacity: 0; }
+}
+
+/* --- PROJECT SPECIFIC HUD OVERLAYS & CANVAS STYLES --- */
+#proj1-animation-screen, #proj2-animation-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 45;
+    pointer-events: none;
+    background: transparent;
+}
+
+#infinity-gauntlet {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(100%);
+    width: 300px;
+    height: 400px;
+    opacity: 0;
+}
+
+#dume-robot-arm {
+    position: fixed;
+    bottom: -10px;
+    right: -10px;
+    transform: translateX(100%) scale(0.95);
+    width: 340px;
+    height: 340px;
+    opacity: 0;
+}
+
+#smoke-cloud-layer {
+    position: fixed;
+    inset: 0;
+    background: #e2e8f0; /* Dense extinguisher gray dust cloud color */
+    opacity: 0;
+    z-index: 46;
+    pointer-events: none;
+}
+
+/* --- TRIGGER ACTION TIMELINES FOR SUB-PROJECTS --- */
+.snap-lift {
+    animation: gauntletTimeline 3.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.dume-sweep {
+    animation: dumeTimeline 3.2s ease-in-out forwards;
+}
+
+.run-smoke {
+    animation: smokeTimeline 1.2s 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.ash-disintegrate {
+    animation: ashTimeline 1.2s ease-in forwards;
+}
+
+@keyframes gauntletTimeline {
+    0% { transform: translateX(-50%) translateY(100%); opacity: 0; }
+    20%, 75% { transform: translateX(-50%) translateY(0); opacity: 1; }
+    100% { transform: translateX(-50%) translateY(120%); opacity: 0; }
+}
+
+@keyframes dumeTimeline {
+    0% { transform: translateX(100%) translateY(20px); opacity: 0; }
+    20%, 80% { transform: translateX(0) translateY(0); opacity: 1; }
+    100% { transform: translateX(100%) translateY(20px); opacity: 0; }
+}
+
+@keyframes smokeTimeline {
+    0% { opacity: 0; filter: blur(10px); }
+    30% { opacity: 0.95; filter: blur(0px); }
+    100% { opacity: 0; filter: blur(15px); }
+}
+
+@keyframes ashTimeline {
+    0% { filter: blur(0px); opacity: 1; }
+    30% { filter: blur(3px) brightness(1.6); opacity: 0.7; }
+    100% { filter: blur(30px) grayscale(1); opacity: 0; transform: translateY(-20px); }
+}

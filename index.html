@@ -3,153 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stark Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            background-color: #020617;
-            color: #ffffff;
-            font-family: monospace;
-            min-height: 100vh;
-            overflow: hidden;
-        }
-        .flex-center {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* 1. INITIAL BOOT SCREEN */
-        #boot-screen {
-            position: fixed;
-            inset: 0;
-            z-index: 50;
-            background-color: #020617;
-            text-align: center;
-        }
-        #init-btn {
-            padding: 16px 32px;
-            background-color: #06b6d4;
-            color: #020617;
-            border: none;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 4px;
-            font-size: 14px;
-            letter-spacing: 0.1em;
-            box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
-            transition: transform 0.2s ease;
-        }
-        #init-btn:hover {
-            transform: scale(1.05);
-        }
-
-        /* 2. GAUNTLET LAYER */
-        #animation-screen {
-            position: fixed;
-            inset: 0;
-            z-index: 40;
-            pointer-events: none;
-            display: flex;
-            justify-content: center;
-            align-items: flex-end;
-            padding-bottom: 20px;
-        }
-        #repulsor-hand {
-            width: 260px;
-            height: 380px;
-            position: relative;
-            transform: translateY(100%);
-            opacity: 0;
-        }
-        
-        #repulsor-node {
-            position: absolute;
-            top: 23%;
-            left: 50%;
-            transform: translateX(-50%) translateY(-50%);
-            width: 8px;
-            height: 8px;
-            background-color: #ffffff;
-            border-radius: 50%;
-            box-shadow: 0 0 20px #fff, 0 0 40px #22d3ee, 0 0 80px #06b6d4, 0 0 120px #06b6d4;
-            z-index: 10;
-        }
-
-        /* 3. MODERATED NEON ENERGY FLARE LAYER (FIXED ACCORDING TO YOUR ROADMAP) */
-        #flash-screen {
-            position: fixed;
-            inset: 0;
-            z-index: 41;
-            background-color: #06b6d4; /* Changed from white to Stark Cyan Energy Blue */
-            pointer-events: none;
-            opacity: 0;
-        }
-
-        /* 4. ACTUAL MAIN PORTFOLIO VIEW */
-        #portfolio-landing {
-            max-width: 800px;
-            margin: 100px auto 0 auto;
-            border: 1px solid rgba(6, 182, 212, 0.3);
-            padding: 40px;
-            border-radius: 8px;
-            background-color: #0f172a;
-            box-shadow: 0 0 30px rgba(6, 182, 212, 0.1);
-            text-align: center;
-        }
-
-        /* ==========================================
-           ANIMATION TIMELINES
-           ========================================== */
-        .run-hand {
-            animation: handTimeline 1.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-        }
-        .run-node {
-            animation: nodeTimeline 0.7s 0.5s ease-in forwards;
-        }
-        /* Sped up the flash to fade out much faster and capped max intensity to 0.7 opacity */
-        .run-flash {
-            animation: flashTimeline 0.6s 1.2s ease-out forwards;
-        }
-
-        @keyframes handTimeline {
-            0% { transform: translateY(100%); opacity: 0; }
-            25% { transform: translateY(0); opacity: 1; }  
-            80% { transform: translateY(0); opacity: 1; }  
-            100% { transform: translateY(120%); opacity: 0; } 
-        }
-
-        @keyframes nodeTimeline {
-            0% { width: 8px; height: 8px; }
-            100% { width: 85px; height: 85px; } 
-        }
-
-        @keyframes flashTimeline {
-            0% { opacity: 0; }
-            20% { opacity: 0.7; } /* Capped so it doesn't blindingly wash out the entire screen */
-            100% { opacity: 0; }  /* Snappy fade out to background slate */
-        }
-    </style>
+    <title>Stark Portfolio Architecture</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/themes.css">
+    <link rel="stylesheet" href="css/animations.css">
 </head>
-<body>
+<body class="overflow-lock">
 
-    <!-- 1. INITIAL BOOT SCREEN -->
+    <!-- 1. INITIAL SYSTEM SECURITY BOOT GATE -->
     <div id="boot-screen" class="flex-center">
-        <h2 style="color: #22d3ee; margin-bottom: 8px; letter-spacing: 0.2em;">JARVIS SYSTEM V4</h2>
-        <p style="color: #64748b; font-size: 12px; margin-bottom: 32px;">ONLINE PROTOCOLS STANDING BY</p>
-        <button id="init-btn">INITIALIZE SYSTEMS</button>
+        <div style="margin-top: 200px;">
+            <h2 style="color: #22d3ee; margin-bottom: 8px; letter-spacing: 0.2em;">JARVIS SYSTEM V5</h2>
+            <p style="color: #64748b; font-size: 12px; margin-bottom: 32px;">TACTICAL HUD DATA NETWORK READY</p>
+            <button id="init-btn">[ INITIALIZE SYSTEMS ]</button>
+        </div>
     </div>
 
-    <!-- 2. THE ANIMATION SCREEN OVERLAY -->
-    <div id="animation-screen">
+    <!-- 2. MAIN BOOT GAUNTLET ANIMATION INTERFACE -->
+    <div id="animation-screen" class="hidden">
         <div id="repulsor-hand">
             <div id="repulsor-node"></div>
-            
             <svg viewBox="0 0 100 150" style="width: 100%; height: 100%;">
                 <path d="M 22 150 L 78 150 L 74 100 L 26 100 Z" fill="#7f1d1d" />
                 <path d="M 26 100 L 74 100 L 70 55 L 30 55 Z" fill="#b91c1c" />
@@ -172,53 +46,169 @@
             </svg>
         </div>
     </div>
+    <div id="flash-screen" class="hidden"></div>
 
-    <!-- 3. FLASH IMPACT LAYER -->
-    <div id="flash-screen"></div>
-
-    <!-- 4. CORE PORTFOLIO APPLICATION CONTAINER -->
-    <div id="portfolio-landing" style="display: none;">
-        <h1 style="color: #22d3ee; margin-bottom: 16px; font-size: 28px;">STARK_SE // ARCHITECTURE LOADED</h1>
-        <p style="color: #94a3b8; line-height: 1.6; margin-bottom: 24px;">
-            I am a Software Engineer specializing in deploying optimized, cutting-edge software configurations.
-        </p>
-        <span style="color: #06b6d4; font-size: 12px; display: block;">[ System fully operational. Scroll unlocked. ]</span>
+    <!-- PROJECT 1: DETAILED MARVEL NANO GAUNTLET MATCHING REFERENCE -->
+    <div id="proj1-animation-screen" class="hidden">
+        <div id="infinity-gauntlet">
+            <svg viewBox="0 0 120 180" style="width:100%; height:100%;">
+                <!-- Forearm Plating & Silver/Gold Accent Mechanics -->
+                <path d="M 25 180 L 95 180 L 90 110 L 30 110 Z" fill="#991b1b" />
+                <path d="M 30 110 L 90 110 L 85 65 L 35 65 Z" fill="#cc1111" />
+                <path d="M 28 150 L 35 110 L 45 110 L 38 150 Z" fill="#94a3b8" />
+                <path d="M 92 150 L 85 110 L 75 110 L 82 150 Z" fill="#94a3b8" />
+                <path d="M 40 180 L 80 180 L 75 140 L 45 140 Z" fill="#d97706" opacity="0.9" />
+                <!-- Wrist Guard Housing -->
+                <path d="M 35 65 L 85 65 L 90 45 L 30 45 Z" fill="#7f1d1d" />
+                <!-- Main Hand Palm Armor Plating faced upfront -->
+                <path d="M 32 45 L 88 45 L 82 20 L 38 20 Z" fill="#ee1111" />
+                <circle cx="60" cy="32" r="11" fill="#334155" stroke="#d97706" stroke-width="1.5" />
+                <!-- Six Segmented Infinity Gems Placements -->
+                <circle cx="37" cy="40" r="4" fill="#ef4444" style="box-shadow:0 0 10px #ef4444;" /> <!-- Reality -->
+                <circle cx="47" cy="36" r="4" fill="#3b82f6" style="box-shadow:0 0 10px #3b82f6;" /> <!-- Space -->
+                <circle cx="59" cy="35" r="4" fill="#a855f7" style="box-shadow:0 0 10px #a855f7;" /> <!-- Power -->
+                <circle cx="71" cy="38" r="4" fill="#eab308" style="box-shadow:0 0 10px #eab308;" /> <!-- Mind -->
+                <circle cx="56" cy="50" r="4.5" fill="#10b981" style="box-shadow:0 0 10px #10b981;" /> <!-- Time -->
+                <circle cx="60" cy="32" r="5.5" fill="#f97316" style="box-shadow:0 0 10px #f97316;" /> <!-- Soul -->
+                <!-- Snap Finger Configurations -->
+                <path d="M 38 20 L 35 5 L 43 5 L 45 20 Z" fill="#b91c1c" />
+                <path d="M 47 20 L 47 2 L 55 2 L 55 20 Z" fill="#d97706" />
+                <path d="M 57 20 L 59 6 L 67 6 L 65 20 Z" fill="#b91c1c" />
+                <path d="M 68 22 L 72 10 L 79 11 L 75 24 Z" fill="#991b1b" />
+            </svg>
+        </div>
     </div>
 
-    <!-- 5. ISOLATED EVENT CONTROLLER LOGIC -->
-    <script>
-        const initBtn = document.getElementById('init-btn');
+    <!-- PROJECT 2: CYBERNETIC DUM-E ROBOT SHOP CRANE MATCHING REFERENCE -->
+    <div id="proj2-animation-screen" class="hidden">
+        <div id="dume-robot-arm">
+            <svg viewBox="0 0 160 160" style="width:100%; height:100%;">
+                <!-- Heavy Industrial Ground Base Station Rim -->
+                <path d="M 40 160 L 120 160 L 105 135 L 55 135 Z" fill="#1e293b" />
+                <rect x="52" y="120" width="56" height="15" fill="#334155" rx="2" />
+                <circle cx="80" cy="120" r="10" fill="#0f172a" />
+                <!-- Primary Lower Hydraulic Arm Crane Assembly -->
+                <path d="M 75 120 L 115 50 L 127 55 L 85 125 Z" fill="#64748b" />
+                <circle cx="118" cy="52" r="7" fill="#475569" />
+                <!-- Secondary Adjustable Forearm Boom Extension -->
+                <path d="M 118 52 L 45 25 L 48 14 L 122 40 Z" fill="#475569" />
+                <!-- Swivel Head Fitting Attaching the Canister -->
+                <circle cx="46" cy="20" r="5" fill="#334155" />
+                <!-- Detailed Fire Extinguisher Tank Assembly -->
+                <g transform="rotate(-30 46 20)">
+                    <rect x="25" y="10" width="22" height="48" rx="5" fill="#dc2626" />
+                    <rect x="31" y="2" width="10" height="8" fill="#475569" />
+                    <!-- Extinguisher Discharge Nozzle Nozzle Tips -->
+                    <path d="M 28 4 L 20 -4 L 14 0 L 26 8 Z" fill="#1e293b" />
+                </g>
+            </svg>
+        </div>
+        <div id="smoke-cloud-layer"></div>
+    </div>
+    
+    <!-- 3. MAIN APPLICATION CONTAINER -->
+    <div id="app-container">
+        
+        <!-- FIRST NAVBAR: GLOBAL UTILITY HUD -->
+        <nav class="global-navbar">
+            <div class="nav-brand">STARK_SE//</div>
+            <div class="nav-utilities">
+                <a href="#" target="_blank" class="social-icon" id="link-linkedin">LN</a>
+                <a href="#" target="_blank" class="social-icon" id="link-gfg">GFG</a>
+                <a href="#" target="_blank" class="social-icon" id="link-leetcode">LC</a>
+                <button id="music-toggle" class="hud-btn">MUSIC: OFF</button>
+                <span id="hud-clock">00:00</span>
+                <button id="theme-toggle" class="hud-btn">THEME: DARK</button>
+            </div>
+        </nav>
 
-        function triggerAudioCue(filename, volumeLevel) {
-            try {
-                const soundEffect = new Audio('sounds/' + filename);
-                soundEffect.volume = volumeLevel;
-                soundEffect.play().catch(() => {
-                    console.log(`Audio system notice: "${filename}" skipped or pathway unmapped.`);
-                });
-            } catch (err) {
-                console.log("Native hardware browser sound matrix currently restricted.");
-            }
-        }
+        <!-- SECOND NAVBAR: IRON MAN SUB-NAVIGATION -->
+        <nav class="ironman-navbar">
+            <button class="sub-nav-btn active" data-target="intro">INTRO</button>
+            <button class="sub-nav-btn" data-target="projects">PROJECTS</button>
+            <button class="sub-nav-btn" data-target="skills">SKILLS & ACH</button>
+            <button class="sub-nav-btn" data-target="experience">EXPERIENCE</button>
+            <button class="sub-nav-btn" data-target="contact">CONTACT</button>
+        </nav>
 
-        initBtn.addEventListener('click', () => {
-            document.getElementById('boot-screen').style.display = 'none';
+        <!-- PORTFOLIO VIEWS MATRIX -->
+        <main class="content-viewport">
             
-            document.getElementById('repulsor-hand').classList.add('run-hand');
-            document.getElementById('repulsor-node').classList.add('run-node');
-            document.getElementById('flash-screen').classList.add('run-flash');
-            
-            triggerAudioCue('charge.mp3', 0.4);
-            setTimeout(() => { 
-                triggerAudioCue('blast.mp3', 0.5); 
-            }, 1100);
+            <section id="intro" class="portfolio-section active-view">
+                <h1 style="color: var(--neon-cyan); margin-bottom: 16px;">Welcome to the Core Dashboard</h1>
+                <p style="color: var(--text-muted); line-height: 1.6;">Systems are fully operational. Select an interface option above to navigate schematics.</p>
+            </section>
 
-            // Keeps loading smooth and hidden behind the dialed-down laser flash
-            setTimeout(() => {
-                document.getElementById('portfolio-landing').style.display = 'block';
-                document.body.style.overflow = 'auto'; 
-            }, 1300);
-        });
-    </script>
+                        <!-- SECTION B: PROJECTS MODULE -->
+            <section id="projects" class="portfolio-section">
+                <!-- PRIMARY PROJECT OVERVIEW SELECTION GRID -->
+                <div id="projects-grid-view">
+                    <h2 style="color: var(--neon-cyan); margin-bottom: 8px;">Project Directives</h2>
+                    <p style="color: var(--text-muted); margin-bottom: 24px;">Select a system module below to inspect source schematics.</p>
+                    
+                    <div class="project-grid">
+                        <div class="project-card">
+                            <h3 style="color:#fff; margin-bottom:8px;">01 // Cyber Defense Hub</h3>
+                            <p style="color:var(--text-muted); font-size:13px; margin-bottom:16px;">Automated firewalls threat perimeter management engine layout configuration framework.</p>
+                            <button class="hud-btn view-proj-btn" data-project="proj-1">Access Schematics</button>
+                        </div>
+                        <div class="project-card">
+                            <h3 style="color:#fff; margin-bottom:8px;">02 // Quantum Router API</h3>
+                            <p style="color:var(--text-muted); font-size:13px; margin-bottom:16px;">High-performance, load-balanced multi-threaded pipeline routing nodes configuration.</p>
+                            <button class="hud-btn view-proj-btn" data-project="proj-2">Access Schematics</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SUB-PANEL SUBSECTION: PROJECT 1 DETAIL MODULE -->
+                <div id="detail-proj-1" class="project-detail-view">
+                    <h2 style="color: var(--neon-cyan);">System // Cyber Defense Hub</h2>
+                    <div class="video-frame-container">
+                        <!-- GPU Hardware-Accelerated Mobile-Safe Inline Loop Video Slot -->
+                        <video src="assets/videos/project1.mp4" autoplay loop muted playsinline></video>
+                    </div>
+                    <p style="color: var(--text-muted); line-height: 1.6; font-size: 14px;">
+                        This framework actively logs and filters unoptimized local request blocks. It features automated packet verification and microsecond firewall compilation run paths.
+                    </p>
+                    <button class="back-grid-btn">← Close Schematics</button>
+                </div>
+
+                <!-- SUB-PANEL SUBSECTION: PROJECT 2 DETAIL MODULE -->
+                <div id="detail-proj-2" class="project-detail-view">
+                    <h2 style="color: var(--neon-cyan);">System // Quantum Router API</h2>
+                    <div class="video-frame-container">
+                        <video src="assets/videos/project2.mp4" autoplay loop muted playsinline></video>
+                    </div>
+                    <p style="color: var(--text-muted); line-height: 1.6; font-size: 14px;">
+                        An API layout deployed to coordinate distributed state queries. Engineered with an asynchronous memory pool to bypass caching bottlenecks under maximum data routing conditions.
+                    </p>
+                    <button class="back-grid-btn">← Close Schematics</button>
+                </div>
+            </section>
+
+
+            <section id="skills" class="portfolio-section">
+                <h2 style="color: var(--neon-cyan); margin-bottom: 16px;">Technical Weaponry & Achievements</h2>
+                <p style="color: var(--text-muted);">Skills matrix incoming...</p>
+            </section>
+
+            <section id="experience" class="portfolio-section">
+                <h2 style="color: var(--neon-cyan); margin-bottom: 16px;">Service Ledger (Experience)</h2>
+                <p style="color: var(--text-muted);">Career log files mapping soon...</p>
+            </section>
+
+            <section id="contact" class="portfolio-section">
+                <h2 style="color: var(--neon-cyan); margin-bottom: 16px;">Establish Comms (Contact)</h2>
+                <p style="color: var(--text-muted);">Secure communications channels standing by...</p>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Linking layout logic files -->
+    <script src="js/audio.js"></script>
+    <script src="js/topbar.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/core.js"></script>
 </body>
 </html>
