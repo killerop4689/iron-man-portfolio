@@ -58,7 +58,7 @@
     font-weight: bold;
     padding: 8px 14px;
     border: 1px solid var(--border-color);
-    border-radius: 4px;
+    border-radius: 10px;
     font-size: 15px;
 }
 
@@ -81,7 +81,7 @@
     color: var(--text-main);
     padding: 8px 14px;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 10px;
     font-family: monospace;
     font-size: 15px;
 }
@@ -124,7 +124,7 @@
     cursor: pointer;
     font-family: monospace;
     transition: all 0.3s ease;
-    border-radius: 4px;
+    border-radius: 10px;
 }
 
 .sub-nav-btn:hover, .sub-nav-btn.active {
@@ -192,7 +192,7 @@
     flex: 1;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--border-color);
-    border-radius: 6px;
+    border-radius: 14px;
     padding: 24px;
     text-align: left;
     transition: transform 0.3s;
@@ -363,7 +363,7 @@
     height: 130px;
     background: #0d0714;
     border: 1px solid var(--glow);
-    border-radius: 10px;
+    border-radius: 16px;
     box-shadow: 0 0 12px var(--glow);
     display: flex;
     flex-direction: column;
@@ -504,7 +504,7 @@
     width: 100%;
     max-height: 380px;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 14px;
     border: 1px solid var(--border-color);
     box-shadow: 0 0 20px var(--neon-glow);
 }
@@ -545,7 +545,7 @@
     width: 100%;
     background: rgba(255,255,255,0.05);
     border: 1px solid var(--border-color);
-    border-radius: 6px;
+    border-radius: 12px;
     padding: 12px;
     color: var(--text-main);
     margin-bottom: 14px;

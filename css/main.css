@@ -62,7 +62,7 @@ body {
     padding: 32px 16px;
     background: var(--bg-card);
     border: 1px solid var(--border-color);
-    border-radius: 6px;
+    border-radius: 16px;
     box-shadow: 0 0 20px var(--neon-glow);
     margin-top: 16px;
     min-height: 400px;
