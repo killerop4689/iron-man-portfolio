@@ -37,6 +37,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     gap: 16px;
 }
 
@@ -53,6 +54,9 @@ body {
 }
 
 /* SECTION HANDLING VIA ROUTING FLAGS */
+
+
+
 .portfolio-section {
     display: none;
     padding: 32px 16px;
@@ -67,3 +71,5 @@ body {
 .active-view {
     display: block !important;
 }
+
+

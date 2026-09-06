@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.15.1/devicon.min.css">
     <meta charset="UTF-8">
@@ -82,11 +84,11 @@
         
         <!-- FIRST NAVBAR: GLOBAL UTILITY HUD -->
         <nav class="global-navbar">
-            <div class="nav-brand">STARK_SE//</div>
+            <div class="nav-brand">NIRASIRI</div>
             <div class="nav-utilities">
-            <a href="#" target="_blank" class="social-icon" id="link-linkedin"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="#" target="_blank" class="social-icon" id="link-gfg"><i class="fa-solid fa-terminal"></i></a>
-            <a href="#" target="_blank" class="social-icon" id="link-leetcode"><i class="fa-solid fa-code"></i></a>
+            <a href="https://www.linkedin.com/in/rahul-sirimane" target="_blank" class="social-icon" id="link-linkedin"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://www.geeksforgeeks.org/profile/rahulsirimane?tab=activity" target="_blank" class="social-icon" id="link-gfg"><i class="fa-solid fa-terminal"></i></a>
+            <a href="https://leetcode.com/u/rahulsirimane/" target="_blank" class="social-icon" id="link-leetcode"><i class="fa-solid fa-code"></i></a>
             <button id="music-toggle" class="hud-btn"><i class="fa-solid fa-music"></i></button>
                 <span id="hud-clock">00:00</span>
                 <button id="theme-toggle" class="hud-btn">DARK</button>
@@ -313,12 +315,24 @@
                         </div>
                     </div>
                 </div>
-                </div>
+                
             </section>
 
-            <section id="contact" class="portfolio-section">
-                <h2 style="color: var(--neon-cyan); margin-bottom: 16px;">Establish Comms (Contact)</h2>
-                <p style="color: var(--text-muted);">Secure communications channels standing by...</p>
+            <section id="contact" class="portfolio-section contact-section">
+                <div class="contact-left">
+                    <h2 class="contact-heading">LET'S CONNECT</h2>
+                    <p class="contact-info"><i class="fa-solid fa-phone"></i> +91-8277323899</p>
+                    <p class="contact-info"><i class="fa-solid fa-envelope"></i> rahulsirimane@gmail.com</p>
+                    <p class="contact-info"><i class="fa-solid fa-location-dot"></i> Bangalore, India</p>
+
+                    <form action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="6ab2f830-1836-408e-a664-86375dc209d1">
+                    <input type="text" name="name" placeholder="Name" class="contact-input" required>
+                    <input type="email" name="email" placeholder="Email" class="contact-input" required>
+                    <textarea name="message" placeholder="Write your message here..." class="contact-input contact-textarea" required></textarea>
+                    <button type="submit" class="contact-send-btn">SEND</button>
+                    </form>
+                </div>
             </section>
 
         </main>

@@ -31,12 +31,20 @@
     border-bottom: 1px solid var(--border-color);
     margin-bottom: 5px;
 }
+
 .nav-brand {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-style: italic;
     color: var(--neon-cyan);
-    font-weight: bold;
-    font-size: 26px;
+    font-size: 28px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
     text-shadow: 0 0 8px var(--neon-glow);
+    transform: skewX(-8deg);
+    display: inline-block;
 }
+
 
 .nav-utilities {
     display: flex;
@@ -512,3 +520,65 @@
 
 .exp-role { color: var(--text-muted); font-size: 16px; margin-bottom: 10px; }
 .exp-list { padding-left: 18px; color: var(--text-muted); font-size: 16px; line-height: 1.75; }
+
+
+.contact-left {
+   width: 100%;
+   max-width: 600px;
+   margin: 0 auto;
+}
+
+
+.contact-heading {
+    font-size: 32px;
+    color: var(--neon-cyan);
+    text-shadow: 0 0 12px var(--neon-glow);
+    margin-bottom: 24px;
+}
+.contact-info {
+    color: var(--text-main);
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+.contact-info i { margin-right: 8px; color: var(--neon-cyan); }
+.contact-input {
+    width: 100%;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 12px;
+    color: var(--text-main);
+    margin-bottom: 14px;
+    font-family: monospace;
+}
+.contact-textarea { min-height: 100px; resize: vertical; }
+.contact-send-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #d97706, #eab308);
+    color: #1a0f0a;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#app-container {
+    justify-content: flex-start !important;
+    align-items: stretch !important;
+}
+main.content-viewport {
+    display: block !important;
+}
+
+#contact.active-view {
+    display: flex !important;
+    flex-direction: column;
+    min-height: unset !important;
+}
+
+.contact-send-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(234, 179, 8, 0.6);
+}
