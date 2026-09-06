@@ -338,9 +338,10 @@
     color: var(--neon-cyan);
     font-size: 32px;
     letter-spacing: 0.3em;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
+    margin-top: 20px;
     text-shadow: 0 0 12px var(--neon-glow);
-    padding-left: 40px;
+    padding-left: 18px;
 }
 
 .skills-grid {
@@ -508,3 +509,6 @@
         margin: 0 auto 20px auto;
     }
 }
+
+.exp-role { color: var(--text-muted); font-size: 16px; margin-bottom: 10px; }
+.exp-list { padding-left: 18px; color: var(--text-muted); font-size: 16px; line-height: 1.75; }
