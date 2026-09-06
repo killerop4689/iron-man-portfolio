@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.15.1/devicon.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stark Portfolio Architecture</title>
@@ -48,36 +50,6 @@
     </div>
     <div id="flash-screen" class="hidden"></div>
 
-    <!-- PROJECT 1: DETAILED MARVEL NANO GAUNTLET MATCHING REFERENCE -->
-    <div id="proj1-animation-screen" class="hidden">
-        <div id="infinity-gauntlet">
-            <svg viewBox="0 0 120 180" style="width:100%; height:100%;">
-                <!-- Forearm Plating & Silver/Gold Accent Mechanics -->
-                <path d="M 25 180 L 95 180 L 90 110 L 30 110 Z" fill="#991b1b" />
-                <path d="M 30 110 L 90 110 L 85 65 L 35 65 Z" fill="#cc1111" />
-                <path d="M 28 150 L 35 110 L 45 110 L 38 150 Z" fill="#94a3b8" />
-                <path d="M 92 150 L 85 110 L 75 110 L 82 150 Z" fill="#94a3b8" />
-                <path d="M 40 180 L 80 180 L 75 140 L 45 140 Z" fill="#d97706" opacity="0.9" />
-                <!-- Wrist Guard Housing -->
-                <path d="M 35 65 L 85 65 L 90 45 L 30 45 Z" fill="#7f1d1d" />
-                <!-- Main Hand Palm Armor Plating faced upfront -->
-                <path d="M 32 45 L 88 45 L 82 20 L 38 20 Z" fill="#ee1111" />
-                <circle cx="60" cy="32" r="11" fill="#334155" stroke="#d97706" stroke-width="1.5" />
-                <!-- Six Segmented Infinity Gems Placements -->
-                <circle cx="37" cy="40" r="4" fill="#ef4444" style="box-shadow:0 0 10px #ef4444;" /> <!-- Reality -->
-                <circle cx="47" cy="36" r="4" fill="#3b82f6" style="box-shadow:0 0 10px #3b82f6;" /> <!-- Space -->
-                <circle cx="59" cy="35" r="4" fill="#a855f7" style="box-shadow:0 0 10px #a855f7;" /> <!-- Power -->
-                <circle cx="71" cy="38" r="4" fill="#eab308" style="box-shadow:0 0 10px #eab308;" /> <!-- Mind -->
-                <circle cx="56" cy="50" r="4.5" fill="#10b981" style="box-shadow:0 0 10px #10b981;" /> <!-- Time -->
-                <circle cx="60" cy="32" r="5.5" fill="#f97316" style="box-shadow:0 0 10px #f97316;" /> <!-- Soul -->
-                <!-- Snap Finger Configurations -->
-                <path d="M 38 20 L 35 5 L 43 5 L 45 20 Z" fill="#b91c1c" />
-                <path d="M 47 20 L 47 2 L 55 2 L 55 20 Z" fill="#d97706" />
-                <path d="M 57 20 L 59 6 L 67 6 L 65 20 Z" fill="#b91c1c" />
-                <path d="M 68 22 L 72 10 L 79 11 L 75 24 Z" fill="#991b1b" />
-            </svg>
-        </div>
-    </div>
 
     <!-- PROJECT 2: CYBERNETIC DUM-E ROBOT SHOP CRANE MATCHING REFERENCE -->
     <div id="proj2-animation-screen" class="hidden">
@@ -103,7 +75,6 @@
                 </g>
             </svg>
         </div>
-        <div id="smoke-cloud-layer"></div>
     </div>
     
     <!-- 3. MAIN APPLICATION CONTAINER -->
@@ -113,12 +84,12 @@
         <nav class="global-navbar">
             <div class="nav-brand">STARK_SE//</div>
             <div class="nav-utilities">
-                <a href="#" target="_blank" class="social-icon" id="link-linkedin">LN</a>
-                <a href="#" target="_blank" class="social-icon" id="link-gfg">GFG</a>
-                <a href="#" target="_blank" class="social-icon" id="link-leetcode">LC</a>
-                <button id="music-toggle" class="hud-btn">MUSIC: OFF</button>
+            <a href="#" target="_blank" class="social-icon" id="link-linkedin"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="#" target="_blank" class="social-icon" id="link-gfg"><i class="fa-solid fa-terminal"></i></a>
+            <a href="#" target="_blank" class="social-icon" id="link-leetcode"><i class="fa-solid fa-code"></i></a>
+            <button id="music-toggle" class="hud-btn"><i class="fa-solid fa-music"></i></button>
                 <span id="hud-clock">00:00</span>
-                <button id="theme-toggle" class="hud-btn">THEME: DARK</button>
+                <button id="theme-toggle" class="hud-btn">DARK</button>
             </div>
         </nav>
 
@@ -126,7 +97,7 @@
         <nav class="ironman-navbar">
             <button class="sub-nav-btn active" data-target="intro">INTRO</button>
             <button class="sub-nav-btn" data-target="projects">PROJECTS</button>
-            <button class="sub-nav-btn" data-target="skills">SKILLS & ACH</button>
+            <button class="sub-nav-btn" data-target="skills">CAPABILITIES</button>
             <button class="sub-nav-btn" data-target="experience">EXPERIENCE</button>
             <button class="sub-nav-btn" data-target="contact">CONTACT</button>
         </nav>
@@ -134,27 +105,47 @@
         <!-- PORTFOLIO VIEWS MATRIX -->
         <main class="content-viewport">
             
-            <section id="intro" class="portfolio-section active-view">
-                <h1 style="color: var(--neon-cyan); margin-bottom: 16px;">Welcome to the Core Dashboard</h1>
-                <p style="color: var(--text-muted); line-height: 1.6;">Systems are fully operational. Select an interface option above to navigate schematics.</p>
+            <section id="intro" class="portfolio-section active-view intro-flex">
+                <div class="intro-text">
+                    <h1 style="color: var(--neon-cyan); margin-bottom: 24px;">Hi, I'm Rahul R Sirimane</h1>
+                    <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 20px; font-size: 17px;">
+                        I'm a Software Engineer based in Bangalore, originally from Mysuru. I hold a degree in Electronics and Communication from NIE Mysuru.
+                    </p>
+                    <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 20px; font-size: 17px;">
+                        Day to day, I focus on building backend systems for large scale enterprise operations. Outside of work, I'm usually experimenting with full stack dev and applied AI. Most recently, I built a multi agent AI Resume Generator using Spring Boot, React, and the Gemini API that drafts and self-reviews resumes.
+                    </p>
+                    <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 20px; font-size: 17px;">
+                        I love solving complex problems, whether that's working through DSA problems (450+ solved so far) or leading a team, a habit I picked up captaining my college cricket team to a state-level podium finish.
+                    </p>
+                    <p style="color: var(--text-muted); line-height: 1.6; font-size: 17px;">
+                        I'm always looking to connect with people working on backend architecture, distributed systems, or AI integration. Feel free to reach out!
+                    </p>
+                </div>
+                <div class="intro-photo">
+                    <img src="assets/images/profile.jpg" alt="Rahul R Sirimane">
+                </div>
             </section>
 
                         <!-- SECTION B: PROJECTS MODULE -->
             <section id="projects" class="portfolio-section">
                 <!-- PRIMARY PROJECT OVERVIEW SELECTION GRID -->
-                <div id="projects-grid-view">
+                 
+                <div id="projects-grid-view" style="position:relative;">
+                    <div id="smoke-cloud-layer"></div>
                     <h2 style="color: var(--neon-cyan); margin-bottom: 8px;">Project Directives</h2>
                     <p style="color: var(--text-muted); margin-bottom: 24px;">Select a system module below to inspect source schematics.</p>
                     
                     <div class="project-grid">
                         <div class="project-card">
-                            <h3 style="color:#fff; margin-bottom:8px;">01 // Cyber Defense Hub</h3>
-                            <p style="color:var(--text-muted); font-size:13px; margin-bottom:16px;">Automated firewalls threat perimeter management engine layout configuration framework.</p>
+                            <h3 style="color: var(--text-main); margin-bottom:8px;">Resume Creator</h3>
+                            <p style="color:var(--text-muted); font-size:13px; margin-bottom:8px;">A full-stack resume optimization platform featuring a self-correcting Gemini AI workflow that automatically generates, reviews, and refines resumes for ATS compliance. Built using a robust Spring Boot backend and an interactive React frontend.</p>
+                            <p style="color:var(--neon-cyan); font-size:11px; margin-bottom:16px; font-family:monospace;">Java · Spring Boot · PostgreSQL · JWT · React · Docker</p>
                             <button class="hud-btn view-proj-btn" data-project="proj-1">Access Schematics</button>
                         </div>
                         <div class="project-card">
-                            <h3 style="color:#fff; margin-bottom:8px;">02 // Quantum Router API</h3>
-                            <p style="color:var(--text-muted); font-size:13px; margin-bottom:16px;">High-performance, load-balanced multi-threaded pipeline routing nodes configuration.</p>
+                            <h3 style="color: var(--text-main); margin-bottom:8px;">LightChat — Real-Time Group Chat App</h3>
+                            <p style="color:var(--text-muted); font-size:15px; margin-bottom:8px;">A browser-based real-time group chat application built with Node.js, Socket.IO, vanilla JavaScript, and CSS.</p>
+                            <p style="color:var(--neon-cyan); font-size:12px; margin-bottom:16px; font-family:monospace;">HTML · CSS · JavaScript · Node.js · Socket.IO</p>
                             <button class="hud-btn view-proj-btn" data-project="proj-2">Access Schematics</button>
                         </div>
                     </div>
@@ -162,39 +153,166 @@
 
                 <!-- SUB-PANEL SUBSECTION: PROJECT 1 DETAIL MODULE -->
                 <div id="detail-proj-1" class="project-detail-view">
-                    <h2 style="color: var(--neon-cyan);">System // Cyber Defense Hub</h2>
+                    <h2 style="color: var(--neon-cyan); font-size: 26px;">Resume Creator</h2>
+                    
                     <div class="video-frame-container">
-                        <!-- GPU Hardware-Accelerated Mobile-Safe Inline Loop Video Slot -->
-                        <video src="assets/videos/project1.mp4" autoplay loop muted playsinline></video>
+                        <video src="assets/videos/project1.mp4" controls muted playsinline></video>
                     </div>
-                    <p style="color: var(--text-muted); line-height: 1.6; font-size: 14px;">
-                        This framework actively logs and filters unoptimized local request blocks. It features automated packet verification and microsecond firewall compilation run paths.
-                    </p>
+
+                    <h3 class="proj-subhead">Why I Built This</h3>
+                    <p class="proj-text">I built this project to solve the common pain points of resume writing: vague metrics, inconsistent formatting, and generic phrasing. While single-prompt AI tools often produce robotic results, I wanted to see if an agentic, self-correcting AI pipeline could iterate on a draft to generate a highly credible, ATS-compliant resume.</p>
+
+                    <h3 class="proj-subhead">What It Does</h3>
+                    <p class="proj-text">Users input raw details through a form. A multi-agent pipeline generates a structured resume via Gemini AI, reviews it for unsupported claims and weak bullets, revises automatically if quality falls below threshold (up to 2x), generates 15 tailored interview questions, and saves full generation history per authenticated user.</p>
+                    <p class="proj-text">Users can copy plain text, export a polished PDF, and browse past generations — all behind JWT-secured authentication.</p>
+
+                    <h3 class="proj-subhead">Key Challenges Solved</h3>
+                    <ul class="proj-list">
+                        <li>Multi-agent orchestration — sequential LLM calls with retry/backoff logic</li>
+                        <li>Database migration from H2 to PostgreSQL — debugged a subtle @Lob/OID JSON corruption issue</li>
+                        <li>PDF rendering fidelity — fixed faint-text export bug from dark-theme CSS gradients in html2canvas</li>
+                        <li>JWT-based stateless auth with per-user data isolation</li>
+                        <li>Dockerized all three services into one orchestrated docker-compose stack</li>
+                    </ul>
+
+                    <h3 class="proj-subhead">Tech Stack</h3>
+                    <p class="proj-text"><b>Backend:</b> Java 21, Spring Boot, Spring Data JPA/Hibernate, Spring Security, JWT, Maven, Gemini API<br>
+                    <b>Database:</b> PostgreSQL<br>
+                    <b>Frontend:</b> React, React Router, Axios, Vite<br>
+                    <b>PDF Export:</b> html2canvas, jsPDF<br>
+                    <b>DevOps:</b> Docker, Docker Compose, Nginx, WSL2</p>
+
+                    <h3 class="proj-subhead">How to Use It</h3>
+                    <ol class="proj-list">
+                        <li>Clone the repo</li>
+                        <li>Set up .env with GEMINI_API_KEY, DB_USERNAME, DB_PASSWORD</li>
+                        <li>Run docker compose up --build</li>
+                        <li>Visit localhost:5173, register, and start generating!</li>
+                    </ol>
+
+                    <h3 class="proj-subhead">Future Additions</h3>
+                    <ul class="proj-list">
+                        <li>RAG-grounded resume content using curated keyword banks</li>
+                        <li>Per-user API rate limiting (Bucket4j / Redis-backed)</li>
+                        <li>JD-tailored resumes: Re-weight bullets to match a pasted job description</li>
+                    </ul>
+
+                    <a href="https://github.com/killerop4689/Resume_Creator_App" target="_blank" class="hud-btn" style="display:inline-block; margin-top:10px; text-decoration:none;">View on GitHub</a>
                     <button class="back-grid-btn">← Close Schematics</button>
                 </div>
 
                 <!-- SUB-PANEL SUBSECTION: PROJECT 2 DETAIL MODULE -->
                 <div id="detail-proj-2" class="project-detail-view">
-                    <h2 style="color: var(--neon-cyan);">System // Quantum Router API</h2>
-                    <div class="video-frame-container">
-                        <video src="assets/videos/project2.mp4" autoplay loop muted playsinline></video>
-                    </div>
-                    <p style="color: var(--text-muted); line-height: 1.6; font-size: 14px;">
-                        An API layout deployed to coordinate distributed state queries. Engineered with an asynchronous memory pool to bypass caching bottlenecks under maximum data routing conditions.
-                    </p>
+                    <h2 style="color: var(--neon-cyan); font-size: 26px;">LightChat App</h2>
+
+                    <h3 class="proj-subhead">Why I Built This</h3>
+                    <p class="proj-text">I built LightChat to understand how real-time web applications work beyond normal request-and-response websites. It explores how multiple browser users can connect to one server, join a shared chat session, send messages instantly, and receive live notifications when users enter or leave.</p>
+
+                    <h3 class="proj-subhead">What It Does</h3>
+                    <p class="proj-text">Users open the chat page, enter a name, and join a shared real-time chat session. The app connects each browser to a Socket.IO server, announces joins, broadcasts messages instantly, shows disconnect notifications, plays a sound on new messages, and dynamically updates the chat UI without refreshing the page.</p>
+
+                    <h3 class="proj-subhead">Key Challenges Solved</h3>
+                    <ul class="proj-list">
+                        <li>Real-time communication using Socket.IO events for instant messaging and status updates</li>
+                        <li>Connection management — tracked and removed users via Socket IDs on disconnect</li>
+                        <li>Event-based architecture separating join, send, receive, leave, and disconnect events</li>
+                        <li>Dynamic DOM manipulation to create and position chat messages in real time</li>
+                        <li>Configured Socket.IO CORS for local Live Server frontend at 127.0.0.1:5500</li>
+                        <li>Added message sounds and join/leave notifications for a more interactive feel</li>
+                    </ul>
+
+                    <h3 class="proj-subhead">Tech Stack</h3>
+                    <p class="proj-text"><b>Frontend:</b> HTML5, CSS3, Vanilla JavaScript<br>
+                    <b>Backend:</b> Node.js<br>
+                    <b>Real-time communication:</b> Socket.IO<br>
+                    <b>Development server:</b> VS Code Live Server<br>
+                    <b>Package management:</b> npm</p>
+
+                    <h3 class="proj-subhead">How to Use It</h3>
+                    <ol class="proj-list">
+                        <li>Clone: git clone https://github.com/killerop4689/lightchat-app.git</li>
+                        <li>cd lightchat-app/nodeserver</li>
+                        <li>npm install</li>
+                        <li>node index.js</li>
+                        <li>Open index.html via VS Code Live Server</li>
+                        <li>Visit 127.0.0.1:5500, enter a name, open another tab to test live messaging</li>
+                    </ol>
+
+                    <h3 class="proj-subhead">Future Additions</h3>
+                    <ul class="proj-list">
+                        <li>Chat rooms for private group sessions</li>
+                        <li>Message history stored in a database</li>
+                        <li>Authentication with signup/login and user profiles</li>
+                        <li>Online user list display</li>
+                        <li>Improved mobile responsiveness</li>
+                        <li>Full deployment for cross-network chatting</li>
+                    </ul>
+
+                    <a href="https://github.com/killerop4689/lightchat-app" target="_blank" class="hud-btn" style="display:inline-block; margin-top:10px; text-decoration:none;">View on GitHub</a>
                     <button class="back-grid-btn">← Close Schematics</button>
                 </div>
             </section>
 
 
             <section id="skills" class="portfolio-section">
-                <h2 style="color: var(--neon-cyan); margin-bottom: 16px;">Technical Weaponry & Achievements</h2>
-                <p style="color: var(--text-muted);">Skills matrix incoming...</p>
+                <h2 class="exp-heading">SKILLS</h2>
+                <div class="skills-grid">
+                <div class="skill-card" style="--glow:#f89820"><i class="devicon-java-plain"></i><span>Java</span></div>
+                <div class="skill-card" style="--glow:#6db33f"><i class="devicon-spring-plain"></i><span>Spring Boot</span></div>
+                <div class="skill-card" style="--glow:#a855f7"><i class="fa-solid fa-robot"></i><span>Agentic AI</span></div>
+                <div class="skill-card" style="--glow:#336791"><i class="devicon-postgresql-plain"></i><span>Postgres</span></div>
+                <div class="skill-card" style="--glow:#eab308"><i class="fa-solid fa-diagram-project"></i><span>DSA</span></div>
+                <div class="skill-card" style="--glow:#f0db4f"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
+                <div class="skill-card" style="--glow:#fb015b"><span class="ex-icon">JWT</span><span>JWT</span></div>
+                <div class="skill-card" style="--glow:#61dafb"><i class="fa-brands fa-react"></i><span>React JS</span></div>
+                <div class="skill-card" style="--glow:#2496ed"><i class="fa-brands fa-docker"></i><span>Docker</span></div>
+                <div class="skill-card" style="--glow:#00599c"><i class="devicon-cplusplus-plain"></i><span>C++</span></div>
+                </div>
+                <h2 class="exp-heading" style="margin-top:60px;">ACHIEVEMENTS</h2>
+                <div id="achievements-output" class="skills-output"></div>
             </section>
 
             <section id="experience" class="portfolio-section">
-                <h2 style="color: var(--neon-cyan); margin-bottom: 16px;">Service Ledger (Experience)</h2>
-                <p style="color: var(--text-muted);">Career log files mapping soon...</p>
+                <h2 class="exp-heading">EXPERIENCE</h2>
+                <div class="main-reactor">
+                <div class="main-reactor-ring"></div>
+                <div class="main-reactor-ring ring-2"></div>
+                <div class="main-reactor-core"></div>
+                </div>
+                <div class="exp-timeline">
+                    <div class="exp-item">
+                        <div class="exp-node">
+                            <div class="reactor-ring"></div>
+                            <div class="reactor-core"></div>
+                        </div>
+                        <div class="exp-date">JAN '24 — APR '24</div>
+                        <div class="exp-card">
+                            <h3 class="exp-title">SYSTEM LOG // Coding Ninjas</h3>
+                            <p class="exp-role">Teaching Assistant</p>
+                            <ul class="exp-list">
+                                <li>Mentored over 200 students in Data Structures and Algorithms.</li>
+                                <li>Achieved a rating of 4.92/5, with 90% 5-star ratings.</li>
+                                <li>Provided personalized DSA problem-solving assistance.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="exp-item">
+                    <div class="exp-node">
+                        <div class="reactor-ring"></div>
+                        <div class="reactor-core"></div>
+                    </div>
+                    <div class="exp-date">MAR '25 — APR '25</div>
+                    <div class="exp-card">
+                        <h3 class="exp-title">SYSTEM LOG // Tata Consultancy Services</h3>
+                        <p class="exp-role">Project Intern</p>
+                        <ul class="exp-list">
+                            <li>Built AWS CDK code to replicate error scenarios.</li>
+                            <li>Optimized scripts for training/deploying AI models using AWS.</li>
+                            <li>Delivered high-quality code with 99% approval rate.</li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
             </section>
 
             <section id="contact" class="portfolio-section">

@@ -14,21 +14,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. BACKGROUND MUSIC TOGGLE
     const musicBtn = document.getElementById('music-toggle');
     musicBtn.addEventListener('click', () => {
-        if (window.AudioEngine) {
-            window.AudioEngine.toggleBackgroundLoop(musicBtn);
-        }
-    });
-
+    if (window.AudioEngine) {
+        window.AudioEngine.toggleBackgroundLoop(musicBtn);
+        musicBtn.classList.toggle('music-active', !window.AudioEngine.isMuted);
+    }
+    }); 
     // 3. DARK / LIGHT THEME ENGINE CONTROLLER
     const themeBtn = document.getElementById('theme-toggle');
     themeBtn.addEventListener('click', () => {
         const body = document.body;
         if (body.classList.contains('light-theme')) {
             body.classList.remove('light-theme');
-            themeBtn.innerText = "THEME: DARK";
+            themeBtn.innerText = " DARK";
         } else {
             body.classList.add('light-theme');
-            themeBtn.innerText = "THEME: LIGHT";
+            themeBtn.innerText = " LIGHT";
         }
     });
 });

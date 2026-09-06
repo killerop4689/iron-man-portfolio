@@ -29,16 +29,22 @@ body {
     display: none !important;
 }
 
-/* MAIN PORTFOLIO HUD WRAPPER */
 #app-container {
     opacity: 0;
-    max-width: 1024px;
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 16px;
+    padding: 16px 40px;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     gap: 16px;
+}
+
+@media (max-width: 768px) {
+    #app-container {
+        max-width: 100%;
+        padding: 16px;
+    }
 }
 
 .reveal-app {

@@ -35,12 +35,12 @@ window.AudioEngine = {
             if (this.isMuted) {
                 this.backgroundMusic.play().then(() => {
                     this.isMuted = false;
-                    buttonEl.innerText = "MUSIC: ON";
+                    buttonEl.classList.add('music-active');
                 }).catch(()=>{});
             } else {
                 this.backgroundMusic.pause();
                 this.isMuted = true;
-                buttonEl.innerText = "MUSIC: OFF";
+                buttonEl.classList.remove('music-active');
             }
         } catch (err) {}
     }

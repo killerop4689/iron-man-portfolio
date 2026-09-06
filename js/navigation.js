@@ -3,6 +3,66 @@ document.addEventListener('DOMContentLoaded', () => {
     const navButtons = document.querySelectorAll('.sub-nav-btn');
     const sections = document.querySelectorAll('.portfolio-section');
 
+
+        const achievementsData = [
+        { heading: "TCS AI HACKATHON — WINNER", lines: [
+            "> Won 1st place at TCS AI Hackathon, building an AI-driven solution to a real enterprise problem statement.",
+            "> Automated a manual, time-consuming workflow into an AI-powered pipeline, cutting operational hours.",
+            "> Led ideation and implementation, turning a broad business problem into a working solution under time pressure."
+        ]},
+        
+        { heading: "COMPETITIVE PROGRAMMING", lines: [
+            "> Solved 450+ DSA problems across major platforms.",
+            "> Regularly compete in weekly and bi-weekly coding contests.",
+            "> Apply optimized data structures and algorithms to solve real-world style problems."
+        ]}
+    ];
+    let achievementsTyped = false;
+
+    function typeAchievements() {
+        if (achievementsTyped) return;
+        achievementsTyped = true;
+        const el = document.getElementById('achievements-output');
+        el.innerHTML = '';
+
+        let blockIndex = 0, lineIndex = 0, charIndex = 0;
+
+        function typeNext() {
+            if (blockIndex >= achievementsData.length) return;
+            const block = achievementsData[blockIndex];
+
+            if (lineIndex === 0 && charIndex === 0) {
+                const h = document.createElement('div');
+                h.className = 'achv-heading';
+                h.textContent = block.heading;
+                el.appendChild(h);
+            }
+
+            if (lineIndex >= block.lines.length) {
+                blockIndex++; lineIndex = 0; charIndex = 0;
+                setTimeout(typeNext, 300);
+                return;
+            }
+
+            let lineEl = el.lastChild.classList && el.lastChild.classList.contains('achv-line') ? el.lastChild : null;
+            if (!lineEl || charIndex === 0) {
+                lineEl = document.createElement('div');
+                lineEl.className = 'achv-line';
+                el.appendChild(lineEl);
+            }
+
+            const line = block.lines[lineIndex];
+            lineEl.textContent = line.slice(0, charIndex + 1);
+            charIndex++;
+
+            if (charIndex >= line.length) {
+                lineIndex++; charIndex = 0;
+            }
+            setTimeout(typeNext, 12);
+        }
+        typeNext();
+    }
+
     // 1. STANDARD SECTIONS DASHBOARD VIEW SWITCHER
     function switchView(targetId, pushHistory = true) {
         navButtons.forEach(btn => {
@@ -11,7 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
         sections.forEach(sec => {
             sec.classList.toggle('active-view', sec.id === targetId);
         });
-        
+
+       
+        if (targetId === 'skills') typeAchievements();
+
         // Reset sub-project detail panels if shifting completely away from the primary project tab
         if (targetId !== 'projects') {
             const gridView = document.getElementById('projects-grid-view');
@@ -43,33 +106,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const gridView = document.getElementById('projects-grid-view');
 
             if (chosenProj === 'proj-1') {
-                // --- PROJECT 1 TIMELINE ENGINE: INFINITY GAUNTLET ASHE SNAP ---
-                const screen1 = document.getElementById('proj1-animation-screen');
-                const gauntlet = document.getElementById('infinity-gauntlet');
-
-                if (screen1 && gauntlet) {
-                    screen1.classList.remove('hidden');
-                    gauntlet.classList.add('snap-lift');
-
-                    if (window.AudioEngine) {
-                        window.AudioEngine.playCue('iamironman.mp3');
-                        setTimeout(() => { window.AudioEngine.playCue('snap.mp3'); }, 2000);
-                    }
-
-                    // Fire dust disintegration timeline exactly at the snap cue frame
-                    setTimeout(() => {
-                        gridView.classList.add('ash-disintegrate');
-                    }, 2000);
-
-                    // Seamless content loading swap once disintegration completes
-                    setTimeout(() => {
-                        gridView.style.display = 'none';
-                        document.getElementById('detail-proj-1').style.display = 'block';
-                        screen1.classList.add('hidden');
-                        gauntlet.classList.remove('snap-lift');
-                    }, 3200);
+                if (window.AudioEngine) {
+                    window.AudioEngine.playCue('iamironman.mp3');
+                    setTimeout(() => { window.AudioEngine.playCue('snap.mp3'); }, 2000);
                 }
-
+                gridView.classList.add('fade-out-view');
+                setTimeout(() => {
+                    gridView.style.display = 'none';
+                    gridView.classList.remove('fade-out-view');
+                    const detail = document.getElementById('detail-proj-1');
+                    detail.style.display = 'block';
+                    detail.classList.add('fade-in-view');
+                }, 800);
             } else if (chosenProj === 'proj-2') {
                 // --- PROJECT 2 TIMELINE ENGINE: DUM-E FIRE EXTINGUISHER SMOKE CORE ---
                 const screen2 = document.getElementById('proj2-animation-screen');

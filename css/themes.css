@@ -1,20 +1,19 @@
-/* css/themes.css */
 :root {
-    --bg-main: #020617;
-    --bg-card: #0f172a;
-    --text-main: #ffffff;
-    --text-muted: #94a3b8;
-    --neon-cyan: #06b6d4;
-    --neon-glow: rgba(6, 182, 212, 0.4);
-    --border-color: rgba(6, 182, 212, 0.3);
+    --bg-main: #1a0f0a;
+    --bg-card: #2b140c;
+    --text-main: #ffe9c7;
+    --text-muted: #c9a27a;
+    --neon-cyan: #ffb347;
+    --neon-glow: rgba(220, 38, 38, 0.35);
+    --border-color: rgba(234, 179, 8, 0.4);
 }
 
 .light-theme {
-    --bg-main: #f8fafc;
-    --bg-card: #ffffff;
-    --text-main: #0f172a;
-    --text-muted: #475569;
-    --neon-cyan: #0891b2;
-    --neon-glow: rgba(8, 145, 178, 0.2);
-    --border-color: rgba(8, 145, 178, 0.3);
+    --bg-main: #fdf3e7;
+    --bg-card: #fff8ee;
+    --text-main: #3b1d0f;
+    --text-muted: #7a4a24;
+    --neon-cyan: #b91c1c;
+    --neon-glow: rgba(234, 179, 8, 0.25);
+    --border-color: rgba(185, 28, 28, 0.35);
 }
