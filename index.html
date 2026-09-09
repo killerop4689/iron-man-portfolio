@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/devicon/2.15.1/devicon.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stark Portfolio Architecture</title>
+    <title>Rahul Sirimane — Portfolio</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/themes.css">
@@ -15,14 +15,15 @@
 </head>
 <body class="overflow-lock">
 
-    <!-- 1. INITIAL SYSTEM SECURITY BOOT GATE -->
-    <div id="boot-screen" class="flex-center">
-        <div style="margin-top: 200px;">
-            <h2 style="color: #22d3ee; margin-bottom: 8px; letter-spacing: 0.2em;">JARVIS SYSTEM V5</h2>
-            <p style="color: #64748b; font-size: 12px; margin-bottom: 32px;">TACTICAL HUD DATA NETWORK READY</p>
-            <button id="init-btn">[ INITIALIZE SYSTEMS ]</button>
-        </div>
+<div id="boot-screen" class="flex-center">
+    <div style="margin-top: 200px;">
+        <h2 style="color: #22d3ee; margin-bottom: 8px; letter-spacing: 0.2em;">  PORTFOLIO SYSTEM....<br>RAHUL R SIRIMANE</h2>
+        <p style="color: #64748b; font-size: 12px; margin-bottom: 32px;">PORTFOLIO NETWORK READY</p>
+        <button id="init-btn">[ INITIALIZE SYSTEMS ]</button>
+        <p style="color: #64748b; font-size: 12px; margin-top: 16px;">Tap Initialize Systems to begin...</p>
+        <p style="color: #64748b; font-size: 11px; margin-top: 6px;">This experience includes sound and animated visuals.</p>
     </div>
+</div>
 
     <!-- 2. MAIN BOOT GAUNTLET ANIMATION INTERFACE -->
     <div id="animation-screen" class="hidden">
@@ -91,7 +92,10 @@
             <a href="https://leetcode.com/u/rahulsirimane/" target="_blank" class="social-icon" id="link-leetcode"><i class="fa-solid fa-code"></i></a>
             <button id="music-toggle" class="hud-btn"><i class="fa-solid fa-music"></i></button>
                 <span id="hud-clock">00:00</span>
-                <button id="theme-toggle" class="hud-btn">DARK</button>
+                <label class="theme-switch">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="theme-slider"></span>
+                </label>
             </div>
         </nav>
 
@@ -110,16 +114,16 @@
             <section id="intro" class="portfolio-section active-view intro-flex">
                 <div class="intro-text">
                     <h1 style="color: var(--neon-cyan); margin-bottom: 24px;">Hi, I'm Rahul R Sirimane</h1>
-                    <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 20px; font-size: 17px;">
+                    <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
                         I'm a Software Engineer based in Bangalore, originally from Mysuru. I hold a degree in Electronics and Communication from NIE Mysuru.
                     </p>
-                    <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 20px; font-size: 17px;">
+                    <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
                         Day to day, I focus on building backend systems for large scale enterprise operations. Outside of work, I'm usually experimenting with full stack dev and applied AI. Most recently, I built a multi agent AI Resume Generator using Spring Boot, React, and the Gemini API that drafts and self-reviews resumes.
                     </p>
-                    <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 20px; font-size: 17px;">
-                        I love solving complex problems, whether that's working through DSA problems (450+ solved so far) or leading a team, a habit I picked up captaining my college cricket team to a state-level podium finish.
+                    <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
+                        I love solving complex problems, whether that's working through DSA problems (450+ solved so far) or leading a team—a habit I picked up captaining my college cricket team to a Mysuru zonal championship and on to a state level podium finish.
                     </p>
-                    <p style="color: var(--text-muted); line-height: 1.6; font-size: 17px;">
+                    <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
                         I'm always looking to connect with people working on backend architecture, distributed systems, or AI integration. Feel free to reach out!
                     </p>
                 </div>
@@ -257,7 +261,9 @@
 
 
             <section id="skills" class="portfolio-section">
-                <h2 class="exp-heading">SKILLS</h2>
+                <h2 class="exp-heading" style="margin-top:60px;">ACHIEVEMENTS</h2>
+                <div id="achievements-output" class="skills-output"></div>
+                <h2 class="exp-heading" style="margin-top:60px;">SKILLS</h2>
                 <div class="skills-grid">
                 <div class="skill-card" style="--glow:#f89820"><i class="devicon-java-plain"></i><span>Java</span></div>
                 <div class="skill-card" style="--glow:#6db33f"><i class="devicon-spring-plain"></i><span>Spring Boot</span></div>
@@ -270,8 +276,7 @@
                 <div class="skill-card" style="--glow:#2496ed"><i class="fa-brands fa-docker"></i><span>Docker</span></div>
                 <div class="skill-card" style="--glow:#00599c"><i class="devicon-cplusplus-plain"></i><span>C++</span></div>
                 </div>
-                <h2 class="exp-heading" style="margin-top:60px;">ACHIEVEMENTS</h2>
-                <div id="achievements-output" class="skills-output"></div>
+                
             </section>
 
             <section id="experience" class="portfolio-section">

@@ -21,15 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     }); 
     // 3. DARK / LIGHT THEME ENGINE CONTROLLER
-    const themeBtn = document.getElementById('theme-toggle');
-    themeBtn.addEventListener('click', () => {
-        const body = document.body;
-        if (body.classList.contains('light-theme')) {
-            body.classList.remove('light-theme');
-            themeBtn.innerText = " DARK";
-        } else {
-            body.classList.add('light-theme');
-            themeBtn.innerText = " LIGHT";
-        }
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('change', () => {
+    document.body.classList.toggle('light-theme', themeToggle.checked);
     });
 });
